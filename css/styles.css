@@ -221,10 +221,16 @@ button { cursor: pointer; border: none; font-family: inherit; }
   max-width: 700px; margin-bottom: 2.5rem; font-weight: 300;
 }
 .origen-glass {
-  background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
-  padding: 2rem 2.5rem; max-width: 600px; margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.08); 
+  -webkit-backdrop-filter: blur(12px); /* Para soporte de Safari */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12); 
+  border-radius: 8px;
+  padding: 2rem 2.5rem; 
+  max-width: 600px; 
+  margin-bottom: 2.5rem;
 }
+
 .origen-glass p { font-size: 0.95rem; line-height: 1.8; opacity: 0.9; }
 .origen-info { display: flex; gap: 3rem; flex-wrap: wrap; }
 .origen-info-item {
@@ -264,45 +270,363 @@ button { cursor: pointer; border: none; font-family: inherit; }
 .cafe-block:nth-child(2) h3 { color: var(--brown-light); }
 .cafe-block p { font-size: 0.92rem; line-height: 1.8; }
 
-/* =============================================
-   SECTION — PROCESO
-   ============================================= */
-.proceso { padding: 7rem 0; background: var(--bg-main); }
-.proceso-header { text-align: center; margin-bottom: 4rem; }
-.proceso-header h2 {
-  font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--text-dark); font-weight: 400; margin-bottom: 0.8rem;
+/* ==========================================
+   SECTION — PROCESO - Diri
+   ========================================== */
+.proceso {
+  padding: 7rem 0;
+  background: var(--bg-main);
+  position: relative;
+  overflow: hidden;
 }
-.proceso-header p { color: var(--text-muted); font-size: 0.95rem; }
 
-.momento { margin-bottom: 3.5rem; }
+.proceso-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.proceso-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+.proceso-header h2 .serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--brown);
+}
+.proceso-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* --- Barra de progreso del proceso (se llena con scroll) --- */
+.proceso-progress {
+  width: 100%;
+  max-width: 400px;
+  height: 2px;
+  background: var(--bg-cream);
+  margin: 2rem auto 0.8rem;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.proceso-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--green-olive), var(--brown-light));
+  border-radius: 2px;
+  transition: width 0.3s ease-out;
+}
+.proceso-progress-label {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+}
+.proceso-progress-label span {
+  color: var(--brown);
+  font-weight: 600;
+}
+
+/* --- Momentos --- */
+.momento {
+  position: relative;
+  padding: 3rem 2rem;
+  margin-bottom: 4rem;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.momento::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-momento);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+}
+.momento:hover::before {
+  opacity: 0.12;
+}
+
 .momento-title {
-  font-size: 0.72rem; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--brown); margin-bottom: 1.5rem; padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--bg-cream); font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--green-dark);
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  position: relative;
 }
-.etapas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.momento-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 1px;
+  background: var(--brown-light);
+}
+
+/* --- Grid de etapas --- */
+.etapas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+/* --- Tarjeta de etapa (base) --- */
 .etapa {
-  background: var(--bg-light); border-radius: 8px; padding: 2rem;
-  transition: var(--transition); cursor: default; position: relative; overflow: hidden;
+  position: relative;
+  background: rgba(255, 249, 241, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(138, 103, 78, 0.08);
+  border-radius: 10px;
+  padding: 2.2rem 1.8rem;
+  transition: var(--transition);
+  cursor: default;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Línea superior que se expande al hover */
 .etapa::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-  background: var(--green-olive); transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-olive), var(--brown-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+  z-index: 2;
 }
-.etapa:hover::before { transform: scaleX(1); }
-.etapa:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.etapa:hover::before {
+  transform: scaleX(1);
+}
+
+.etapa:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 249, 241, 1);
+  border-color: rgba(138, 103, 78, 0.2);
+  box-shadow: 0 12px 40px rgba(138, 103, 78, 0.12);
+}
+
+/* Número de etapa */
 .etapa-number {
-  font-size: 2rem; font-weight: 700; color: var(--bg-cream);
-  margin-bottom: 0.5rem; line-height: 1;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brown-light);
+  opacity: 0.25;
+  transition: var(--transition);
+  pointer-events: none;
 }
-.etapa-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+.etapa:hover .etapa-number {
+  opacity: 0.6;
+  transform: translateY(-4px);
+}
+
+/* Icono SVG */
+.etapa-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--green-olive);
+  transition: var(--transition);
+}
+.etapa-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.etapa:hover .etapa-icon {
+  color: var(--brown);
+  transform: scale(1.1) rotate(-4deg);
+}
+
 .etapa h4 {
-  font-size: 0.9rem; font-weight: 600; color: var(--text-dark);
-  margin-bottom: 0.5rem; letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.3px;
 }
-.etapa p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.etapa p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* --- Badges (tiempo / temperatura) --- */
+.etapa-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.etapa-badge {
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-weight: 500;
+  border: 1px solid rgba(102, 116, 95, 0.15);
+}
+
+/* --- Acordeón: info extra que aparece al hover --- */
+.etapa-extra {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.4s ease;
+  margin-top: 0;
+}
+.etapa:hover .etapa-extra {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(138, 103, 78, 0.2);
+}
+.etapa-extra p {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--brown);
+  line-height: 1.5;
+}
+
+/* --- Tarjeta destacada (Tostado) --- */
+.etapa--destacada {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--green-dark), #2a3a30);
+  border-color: transparent;
+  color: #fff;
+}
+.etapa--destacada::before {
+  background: linear-gradient(90deg, var(--brown-light), var(--brown));
+}
+.etapa--destacada .etapa-number {
+  color: rgba(255, 255, 255, 0.15);
+}
+.etapa--destacada:hover .etapa-number {
+  color: rgba(255, 255, 255, 0.35);
+}
+.etapa--destacada .etapa-icon {
+  color: var(--brown-light);
+}
+.etapa--destacada:hover .etapa-icon {
+  color: #fff;
+}
+.etapa--destacada h4 {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.etapa--destacada p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+}
+.etapa--destacada .etapa-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.etapa--destacada .etapa-extra {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+.etapa--destacada .etapa-extra p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Fix: hover de tarjeta destacada mantiene fondo oscuro --- */
+.etapa--destacada:hover {
+  background: linear-gradient(135deg, #2a3a30, var(--green-dark));
+  border-color: transparent;
+  box-shadow: 0 16px 50px rgba(42, 58, 48, 0.35);
+}
+.etapa--destacada:hover h4 {
+  color: #fff;
+}
+.etapa--destacada:hover p {
+  color: rgba(255, 255, 255, 0.85);
+}
+.etapa--destacada:hover .etapa-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+/* --- Dato curioso --- */
+.proceso-dato {
+  margin: 3rem auto;
+  max-width: 720px;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, var(--green-light), var(--bg-cream));
+  border-radius: 12px;
+  border-left: 3px solid var(--brown);
+  position: relative;
+}
+.proceso-dato-label {
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.proceso-dato-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+.proceso-dato-text strong {
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+/* --- Responsive de Proceso --- */
+@media (max-width: 992px) {
+  .etapas-grid { grid-template-columns: repeat(2, 1fr); }
+  .etapa--destacada { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .etapas-grid { grid-template-columns: 1fr; }
+  .etapa--destacada { grid-column: span 1; }
+  .momento { padding: 2rem 1rem; }
+  .etapa-number { font-size: 2.2rem; }
+  .etapa-extra { max-height: none; opacity: 1; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed rgba(138,103,78,0.2); }
+}
 
 /* =============================================
    SECTION — MISIÓN, VISIÓN, VALORES
@@ -445,10 +769,19 @@ button { cursor: pointer; border: none; font-family: inherit; }
 
 /* Mobile Menu Overlay */
 .mobile-menu {
-  display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(243,238,228,0.97); backdrop-filter: blur(20px);
-  flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  display: none; 
+  position: fixed; 
+  inset: 0; 
+  z-index: 999;
+  background: rgba(243, 238, 228, 0.97); 
+  -webkit-backdrop-filter: blur(20px); /* Para soporte de Safari en iOS y Mac */
+  backdrop-filter: blur(20px);
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 2rem;
 }
+
 .mobile-menu.active { display: flex; }
 .mobile-menu a {
   font-size: 1.2rem; font-weight: 500; letter-spacing: 3px;
