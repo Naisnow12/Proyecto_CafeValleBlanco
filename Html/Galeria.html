@@ -6,85 +6,152 @@
     <title>Galería — Valle Blanco</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="inner-page">
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <div class="container">
-        <a href="../index.html#inicio" class="navbar-brand">Valle Blanco</a>
+        <a href="index.html" class="navbar-brand">Valle Blanco</a>
         <ul class="nav-links">
-          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="cafe.html">Nuestro Café</a></li>
           <li><a href="proceso.html">Proceso</a></li>
           <li><a href="Galeria.html" class="active-link">Galería</a></li>
           <li><a href="Contacto.html" class="nav-cta">Contacto</a></li>
         </ul>
-        <button class="hamburger" aria-label="Menú">
+        <button class="hamburger" aria-label="Menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
     <div class="mobile-menu">
-      <a href="../index.html#inicio">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="cafe.html">Nuestro Café</a>
       <a href="proceso.html">Proceso</a>
-      <a href="Galeria.html">Galería</a>
+      <a href="Galeria.html" class="active-link">Galería</a>
       <a href="Contacto.html">Contacto</a>
     </div>
 
-    <!-- SPACE FOR NAVBAR -->
-    <div style="height: 80px;"></div>
+    <!-- HERO GALERÍA -->
+    <header class="gallery-page-hero">
+      <img
+        src="https://www.lifetime.coffee/images/portadalucho.jpg"
+        alt="Finca cafetalera en Villa Rica, Oxapampa"
+        referrerpolicy="no-referrer"
+        onerror="this.onerror=null;this.src='../img/gallery-plantation.png';"
+      />
+      <div class="gallery-page-hero-overlay"></div>
+      <div class="container gallery-page-hero-content reveal">
+        <p class="section-label">Galería — Villa Rica, Oxapampa</p>
+        <h1>Galería del café<br><span class="serif">de Villa Rica.</span></h1>
+        <p>
+          Un recorrido visual por el origen y las principales etapas del café en
+          Villa Rica, zona cafetalera que inspira la propuesta de Valle Blanco.
+        </p>
+      </div>
+    </header>
 
-    <!-- GALERÍA -->
-    <section class="galeria" id="galeria">
-      <div class="container">
-        <div class="galeria-header">
-          <p class="section-label reveal">06 — Galería</p>
-          <h2 class="reveal">
-            Imágenes que cuentan nuestra <span class="serif">historia</span>.
-          </h2>
+    <!-- GALERÍA INDEPENDIENTE -->
+    <main class="gallery-page">
+      <section class="gallery-intro">
+        <div class="container gallery-intro-grid">
+          <div class="reveal">
+            <p class="section-label">01 — Origen y proceso</p>
+            <h2>Del cafetal al <span class="serif">producto final</span>.</h2>
+          </div>
+          <p class="gallery-intro-copy reveal">
+            Valle Blanco se plantea como una marca de café producido en Villa Rica.
+            Por ello, esta galería reúne fotografías reales y referenciales de la zona
+            para mostrar de forma visual el cultivo, la cosecha, la poscosecha y la
+            preparación del café hasta llegar al consumidor.
+          </p>
         </div>
-        <div class="galeria-grid reveal">
-          <div class="galeria-item">
-            <img src="../img/gallery-plantation.png" alt="Plantación Villa Rica" />
-            <div class="galeria-caption">
-              <strong>Villa Rica</strong><span>Origen</span>
+      </section>
+
+      <section class="gallery-collection" aria-labelledby="gallery-title">
+        <div class="container">
+          <div class="gallery-toolbar reveal">
+            <div>
+              <p class="section-label">02 — Registro visual</p>
+              <h2 id="gallery-title">El café de <span class="serif">Villa Rica</span></h2>
+            </div>
+            <div class="gallery-filters" aria-label="Filtrar galería">
+              <button class="gallery-filter active" type="button" data-filter="all">Todos</button>
+              <button class="gallery-filter" type="button" data-filter="origen">Origen</button>
+              <button class="gallery-filter" type="button" data-filter="cultivo">Cultivo</button>
+              <button class="gallery-filter" type="button" data-filter="proceso">Proceso</button>
             </div>
           </div>
-          <div class="galeria-item">
-            <img src="../img/cherries.png" alt="Cerezas de café" />
-            <div class="galeria-caption">
-              <strong>Cosecha</strong><span>Proceso</span>
-            </div>
+
+          <div class="gallery-page-grid reveal">
+            <button class="gallery-card gallery-card-wide" type="button" data-category="origen" data-src="https://www.lifetime.coffee/images/portadalucho.jpg" data-title="Paisaje cafetalero de Villa Rica" data-text="Finca Don Lucho, ubicada en Villa Rica, Oxapampa. Fotografía referencial de una finca cafetalera de la zona.">
+              <img src="https://www.lifetime.coffee/images/portadalucho.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/gallery-plantation.png';" alt="Finca cafetalera en Villa Rica, Oxapampa" />
+              <span class="gallery-card-caption"><strong>Paisaje cafetalero</strong><small>Villa Rica · Origen</small></span>
+            </button>
+
+            <button class="gallery-card gallery-card-tall" type="button" data-category="cultivo" data-src="https://www.lifetime.coffee/images/trazabilidad-siembra.jpg" data-title="Siembra del café" data-text="Etapa inicial del cultivo. Imagen real de referencia de la Finca Don Lucho, Villa Rica.">
+              <img src="https://www.lifetime.coffee/images/trazabilidad-siembra.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/origin.png';" alt="Siembra y cultivo de café en Villa Rica" />
+              <span class="gallery-card-caption"><strong>Siembra</strong><small>Cultivo</small></span>
+            </button>
+
+            <button class="gallery-card" type="button" data-category="cultivo" data-src="https://www.lifetime.coffee/images/trazabilidad-cosecha.jpg" data-title="Cosecha selectiva" data-text="Recolección de frutos maduros del cafeto. Imagen real de referencia tomada en Villa Rica.">
+              <img src="https://www.lifetime.coffee/images/trazabilidad-cosecha.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/harvest.png';" alt="Cosecha de café en Villa Rica" />
+              <span class="gallery-card-caption"><strong>Cosecha</strong><small>Selección del fruto</small></span>
+            </button>
+
+            <button class="gallery-card" type="button" data-category="proceso" data-src="https://www.lifetime.coffee/images/trazabilidad-poscosecha.jpg" data-title="Poscosecha y secado" data-text="Después de la cosecha se realizan etapas como clasificación, despulpado, fermentación, lavado y secado. Imagen de referencia de Villa Rica.">
+              <img src="https://www.lifetime.coffee/images/trazabilidad-poscosecha.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/drying.png';" alt="Poscosecha y secado de café en Villa Rica" />
+              <span class="gallery-card-caption"><strong>Poscosecha</strong><small>Proceso</small></span>
+            </button>
+
+            <button class="gallery-card gallery-card-wide" type="button" data-category="proceso" data-src="https://www.lifetime.coffee/images/trazabilidad-empaque.jpg" data-title="Producción y empaque" data-text="La etapa final comprende clasificación, tostado, molienda y empaque del café. Imagen real de referencia de Villa Rica.">
+              <img src="https://www.lifetime.coffee/images/trazabilidad-empaque.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/beans.png';" alt="Producción y empaque de café de Villa Rica" />
+              <span class="gallery-card-caption"><strong>Producción y empaque</strong><small>Producto final</small></span>
+            </button>
+
+            <button class="gallery-card" type="button" data-category="origen" data-src="https://cdn.www.gob.pe/uploads/document/file/6063459/920934-429587419_377093881933545_8192831091168191929_n.jpg" data-title="Proyecto café en Villa Rica" data-text="Parcela vinculada al Proyecto Café del Gobierno Regional Pasco, orientado a mejorar la producción cafetalera en Villa Rica.">
+              <img src="https://cdn.www.gob.pe/uploads/document/file/6063459/920934-429587419_377093881933545_8192831091168191929_n.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/gallery-plantation.png';" alt="Parcela de café del Proyecto Café en Villa Rica" />
+              <span class="gallery-card-caption"><strong>Producción local</strong><small>Villa Rica · Pasco</small></span>
+            </button>
+
+            <button class="gallery-card gallery-card-tall" type="button" data-category="proceso" data-src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/WCWL6WZY3JE3HBSCR472YBQRKQ.jpg" data-title="Selección y control de calidad" data-text="Registro en la finca Santa Rosa de Villa Rica. La selección ayuda a identificar y separar granos según su calidad.">
+              <img src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/WCWL6WZY3JE3HBSCR472YBQRKQ.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/beans copy.png';" alt="Selección de granos de café en una finca de Villa Rica" />
+              <span class="gallery-card-caption"><strong>Control de calidad</strong><small>Selección</small></span>
+            </button>
+
+            <button class="gallery-card" type="button" data-category="proceso" data-src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/P3L3L5IWWBCHJCYFWIQG3ZMIVY.jpg" data-title="Cata del café" data-text="La cata permite evaluar aroma, sabor y calidad del café. Fotografía referencial tomada en la finca Santa Rosa de Villa Rica.">
+              <img src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/P3L3L5IWWBCHJCYFWIQG3ZMIVY.jpg" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='../img/cup.png';" alt="Cata de café en Villa Rica" />
+              <span class="gallery-card-caption"><strong>Cata del café</strong><small>Calidad final</small></span>
+            </button>
           </div>
-          <div class="galeria-item">
-            <img src="../img/beans.png" alt="Granos tostados" />
-            <div class="galeria-caption">
-              <strong>Tostado</strong><span>Aroma</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="../img/drying.png" alt="Secado de café" />
-            <div class="galeria-caption">
-              <strong>Secado</strong><span>Tradición</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="../img/cup.png" alt="Taza de café" />
-            <div class="galeria-caption">
-              <strong>Café</strong><span>Experiencia</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="../img/harvest.png" alt="Cosecha manual" />
-            <div class="galeria-caption">
-              <strong>Recolección</strong><span>Dedicación</span>
-            </div>
-          </div>
+
+          <p class="gallery-source-note reveal">
+            <strong>Nota:</strong> Las fotografías de esta sección son referencias reales de la actividad cafetalera en Villa Rica y no se presentan como fotografías propias de Valle Blanco. Fuentes visuales: Lifetime Coffee — Finca Don Lucho, Gobierno Regional Pasco y El Comercio.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery-story">
+        <div class="container gallery-story-inner reveal">
+          <p class="section-label">03 — Identidad cafetalera</p>
+          <blockquote>“Villa Rica es el origen que conecta la tierra, el proceso y la calidad del café.”</blockquote>
+          <a class="gallery-story-link" href="proceso.html">Conoce las etapas del proceso <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+      <button class="gallery-lightbox-close" type="button" aria-label="Cerrar imagen">×</button>
+      <div class="gallery-lightbox-content">
+        <img src="" alt="" id="galleryLightboxImage" />
+        <div class="gallery-lightbox-caption">
+          <strong id="galleryLightboxTitle"></strong>
+          <p id="galleryLightboxText"></p>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
