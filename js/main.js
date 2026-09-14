@@ -128,4 +128,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('currentYear');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  //Parte de Procesos Diri
+
+  const procesoSection = document.querySelector('.proceso');
+  const progressBar = document.getElementById('procesoProgressBar');
+  const etapaActualEl = document.getElementById('etapaActual');
+  const etapas = document.querySelectorAll('.etapa[data-etapa]');
+
+  if (!procesoSection || !progressBar || !etapas.length) return;
+
+  const totalEtapas = etapas.length;
+  let currentEtapa = 1;
+
+  const updateProgress = () => {
+    const rect = procesoSection.getBoundingClientRect();
+    const windowH = window.innerHeight;
+
+    // Progreso según scroll dentro de la sección
+    const sectionTop = -rect.top;
+    const sectionHeight = procesoSection.offsetHeight - windowH;
+    let progress = sectionTop / sectionHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    progressBar.style.width = (progress * 100) + '%';
+
+    // Etapa actual = la que está más cerca del centro de la pantalla
+    const centerY = windowH / 2;
+    let closestEtapa = 1;
+    let closestDist = Infinity;
+    etapas.forEach(etapa => {
+      const r = etapa.getBoundingClientRect();
+      const etapaCenter = r.top + r.height / 2;
+      const dist = Math.abs(etapaCenter - centerY);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestEtapa = parseInt(etapa.dataset.etapa, 10);
+      }
+    });
+
+    if (closestEtapa !== currentEtapa && etapaActualEl) {
+      currentEtapa = closestEtapa;
+      etapaActualEl.textContent = currentEtapa;
+    }
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
 });
