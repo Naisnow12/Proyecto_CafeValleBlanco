@@ -240,31 +240,98 @@ button { cursor: pointer; border: none; font-family: inherit; }
 /* =============================================
    SECTION — NUESTRO CAFÉ
    ============================================= */
-.cafe { padding: 7rem 0; background: var(--bg-light); }
+/* ========================================= */
+/* SECCIÓN NUESTRO CAFÉ                      */
+/* ========================================= */
+
+.cafe { 
+  padding: 7rem 0; 
+  background: var(--bg-light); 
+}
+
 .cafe-header {
-  text-align: center; max-width: 650px; margin: 0 auto 4rem;
+  text-align: center; 
+  max-width: 650px; 
+  margin: 0 auto 4rem;
 }
+
 .cafe-header h2 {
-  font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  color: var(--text-dark); font-weight: 400; line-height: 1.3;
+  font-family: var(--font-serif); 
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--text-dark); 
+  font-weight: 400; 
+  line-height: 1.3;
 }
+
 .cafe-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem;
 }
+
 .cafe-block {
-  padding: 2.5rem; border-radius: 8px; transition: var(--transition);
+  padding: 2.5rem; 
+  border-radius: 8px; 
+  transition: var(--transition);
 }
-.cafe-block:nth-child(1) { background: var(--white-warm); border: 1px solid var(--bg-cream); }
-.cafe-block:nth-child(2) { background: var(--green-dark); color: #fff; }
-.cafe-block:nth-child(3) { background: var(--bg-cream); }
-.cafe-block:nth-child(4) { background: var(--white-warm); border: 1px solid var(--bg-cream); }
-.cafe-block:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+/* --- COLORES DE FONDO PERSONALIZADOS --- */
+/* Cambia los códigos HEX por los colores exactos que desees */
+.cafe-block:nth-child(1) { 
+  background: #E8E1D9; 
+  border: 1px solid var(--bg-cream); 
+}
+.cafe-block:nth-child(2) { 
+  background: #5A4033; /* Fondo oscuro */
+  color: #fff; 
+}
+.cafe-block:nth-child(3) { 
+  background: #D9D1C7; 
+}
+.cafe-block:nth-child(4) { 
+  background: #E8E1D9; 
+  border: 1px solid var(--bg-cream); 
+}
+
+.cafe-block:hover { 
+  transform: translateY(-4px); 
+  box-shadow: var(--shadow-md); 
+}
+
+/* --- ESTILOS DE ENCABEZADO E ICONOS SVG --- */
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.block-header svg {
+  stroke: var(--brown-light); /* Color del contorno del icono */
+  transition: stroke 0.3s ease;
+}
+
+/* Opcional: Cambia el color del icono al pasar el ratón */
+.cafe-block:hover .block-header svg {
+  stroke: var(--green-dark); 
+}
+
 .cafe-block h3 {
-  font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
-  margin-bottom: 1rem; font-weight: 600;
+  font-size: 0.75rem; 
+  letter-spacing: 3px; 
+  text-transform: uppercase;
+  margin-bottom: 0; /* Se ajusta a 0 porque .block-header ya tiene margin-bottom */
+  font-weight: 600;
 }
-.cafe-block:nth-child(2) h3 { color: var(--brown-light); }
-.cafe-block p { font-size: 0.92rem; line-height: 1.8; }
+
+.cafe-block:nth-child(2) h3 { 
+  color: var(--brown-light); 
+}
+
+.cafe-block p { 
+  font-size: 0.92rem; 
+  line-height: 1.6; /* Ajustado de 1.8 a 1.6 para mejor lectura en párrafos cortos */
+}
 
 /* ==========================================
    SECTION — PROCESO - Diri
