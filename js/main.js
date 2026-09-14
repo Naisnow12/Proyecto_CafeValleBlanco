@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
       document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         mobileMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Active Nav Link Highlight --- */
   const sections = document.querySelectorAll('section[id]');
-  const navLinksAll = document.querySelectorAll('.nav-links a, .mobile-menu a');
+  const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"], .mobile-menu a[href^="#"]');
 
   const highlightNav = () => {
     const scrollY = window.scrollY + 100;
@@ -122,6 +124,64 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => successMsg.classList.remove('show'), 5000);
       }
     });
+  }
+
+
+  /* --- Independent Gallery: filters + lightbox --- */
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const galleryFilters = document.querySelectorAll('.gallery-filter');
+  const galleryLightbox = document.getElementById('galleryLightbox');
+
+  if (galleryCards.length) {
+    galleryFilters.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        galleryFilters.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        galleryCards.forEach(card => {
+          const visible = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('is-hidden', !visible);
+        });
+      });
+    });
+
+    if (galleryLightbox) {
+      const lightboxImage = document.getElementById('galleryLightboxImage');
+      const lightboxTitle = document.getElementById('galleryLightboxTitle');
+      const lightboxText = document.getElementById('galleryLightboxText');
+      const closeButton = galleryLightbox.querySelector('.gallery-lightbox-close');
+      let lastFocusedCard = null;
+
+      const closeLightbox = () => {
+        galleryLightbox.classList.remove('open');
+        galleryLightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocusedCard) lastFocusedCard.focus();
+      };
+
+      galleryCards.forEach(card => {
+        card.addEventListener('click', () => {
+          lastFocusedCard = card;
+          lightboxImage.src = card.dataset.src;
+          lightboxImage.alt = card.querySelector('img')?.alt || '';
+          lightboxTitle.textContent = card.dataset.title || '';
+          lightboxText.textContent = card.dataset.text || '';
+          galleryLightbox.classList.add('open');
+          galleryLightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          closeButton.focus();
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      galleryLightbox.addEventListener('click', event => {
+        if (event.target === galleryLightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && galleryLightbox.classList.contains('open')) closeLightbox();
+      });
+    }
   }
 
   /* --- Footer Year --- */
