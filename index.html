@@ -66,45 +66,6 @@
       </div>
     </section>
 
-    <!-- NOSOTROS -->
-    <section class="nosotros" id="nosotros">
-      <div class="container">
-        <div class="nosotros-grid">
-          <div class="nosotros-img reveal">
-            <img src="img/harvest.png" alt="Cosecha de café en Villa Rica" />
-          </div>
-          <div class="nosotros-content">
-            <p class="section-label reveal">02 — Nosotros</p>
-            <h2 class="nosotros-title reveal">
-              Una empresa conectada con la tierra que la vio
-              <span class="serif">crecer</span>.
-            </h2>
-            <p class="nosotros-text reveal">
-              Valle Blanco es una pequeña empresa familiar dedicada al cultivo,
-              procesamiento y comercialización de café producido en Villa Rica,
-              provincia de Oxapampa.
-            </p>
-            <p class="nosotros-text reveal">
-              Nuestra identidad está profundamente relacionada con el origen y el
-              proceso del café. Cada etapa refleja nuestro compromiso con la calidad
-              y la tradición cafetalera de la región.
-            </p>
-            <div class="nosotros-indicators reveal">
-              <div class="indicator-item">
-                <strong>Villa Rica</strong><span>Origen</span>
-              </div>
-              <div class="indicator-item">
-                <strong>Empresa familiar</strong><span>Identidad</span>
-              </div>
-              <div class="indicator-item">
-                <strong>Café</strong><span>Tradición</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ORIGEN -->
     <section class="origen" id="origen">
       <div
@@ -113,7 +74,7 @@
       ></div>
       <div class="origen-overlay"></div>
       <div class="origen-content container">
-        <p class="section-label reveal">03 — Origen</p>
+        <p class="section-label reveal">02 — Origen</p>
         <h2 class="origen-title reveal">
           El lugar no es un detalle.<br /><span class="serif"
             >Es parte del sabor.</span
@@ -139,463 +100,100 @@
       </div>
     </section>
 
-    <!-- NUESTRO CAFÉ -->
-    <section class="cafe" id="cafe">
+    <!-- EXPLORA VALLE BLANCO (HUB DE ACCESO A SECCIONES) -->
+    <section class="hub" id="explorar">
       <div class="container">
-        <div class="cafe-header">
-          <p class="section-label reveal">04 — Nuestro Café</p>
-          <h2 class="reveal">
-            Conocer lo que hay detrás de cada <span class="serif">grano</span>.
-          </h2>
+        <div class="hub-header reveal">
+          <p class="section-label">03 — Explora Valle Blanco</p>
+          <h2>Sumérgete en nuestro <span class="serif">universo cafetalero</span></h2>
+          <p>Descubre cada faceta de nuestra historia, nuestras variedades, el proceso artesanal y los paisajes de nuestra tierra.</p>
         </div>
-        <div class="cafe-grid">
-          <div class="cafe-block reveal">
-            <h3>Procedencia</h3>
-            <p>
-              Nuestro café proviene de Villa Rica, provincia de Oxapampa, una de las
-              regiones más reconocidas del Perú por su producción cafetalera de alta
-              calidad.
-            </p>
-          </div>
-          <div class="cafe-block reveal reveal-delay-1">
-            <h3>Variedades</h3>
-            <p>
-              Trabajamos principalmente con las variedades Caturra y Typica,
-              reconocidas por su perfil de sabor equilibrado, aromático y con cuerpo
-              definido.
-            </p>
-          </div>
-          <div class="cafe-block reveal reveal-delay-2">
-            <h3>Identidad</h3>
-            <p>
-              Nuestro café está directamente relacionado con el territorio donde es
-              cultivado. El suelo, el clima y la altitud de Villa Rica son parte
-              esencial de su carácter.
-            </p>
-          </div>
-          <div class="cafe-block reveal reveal-delay-3">
-            <h3>Propósito</h3>
-            <p>
-              Dar a conocer la historia y las características del café Valle Blanco,
-              conectando al consumidor con el origen y el proceso detrás de cada
-              grano.
-            </p>
-          </div>
+
+        <div class="hub-grid">
+          <!-- CARD NOSOTROS -->
+          <article class="hub-card reveal">
+            <div class="hub-card-img">
+              <img src="img/harvest.png" alt="Nosotros — Familia Valle Blanco" />
+            </div>
+            <div class="hub-card-body">
+              <span class="hub-card-tag">01 · Historia & Pasión</span>
+              <h3 class="hub-card-title">Nuestra Identidad Familiar</h3>
+              <p class="hub-card-desc">
+                Conoce a la familia detrás de Valle Blanco y nuestra profunda conexión con las tierras de Villa Rica y la tradición cafetalera.
+              </p>
+              <a href="Html/nosotros.html" class="hub-card-link">
+                Conocer historia
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD CAFÉ -->
+          <article class="hub-card reveal reveal-delay-1">
+            <div class="hub-card-img">
+              <img src="img/cherries.png" alt="Nuestro Café — Variedades de origen" />
+            </div>
+            <div class="hub-card-body">
+              <span class="hub-card-tag">02 · Calidad de Origen</span>
+              <h3 class="hub-card-title">Variedades & Perfiles</h3>
+              <p class="hub-card-desc">
+                Trabajamos con granos Caturra y Typica cultivados en altura para lograr una taza balanceada con notas aromáticas únicas.
+              </p>
+              <a href="Html/cafe.html" class="hub-card-link">
+                Explorar café
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD PROCESO -->
+          <article class="hub-card reveal">
+            <div class="hub-card-img">
+              <img src="img/drying.png" alt="El Proceso del Café" />
+            </div>
+            <div class="hub-card-body">
+              <span class="hub-card-tag">03 · De la Planta a la Taza</span>
+              <h3 class="hub-card-title">9 Etapas Artesanales</h3>
+              <p class="hub-card-desc">
+                Acompaña cada fase de transformación: cultivo, cosecha selectiva, fermentación, secado al sol, tostado y empaque de alta pureza.
+              </p>
+              <a href="Html/proceso.html" class="hub-card-link">
+                Ver proceso
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- CARD GALERÍA -->
+          <article class="hub-card reveal reveal-delay-1">
+            <div class="hub-card-img">
+              <img src="img/gallery-plantation.png" alt="Galería fotográfica" />
+            </div>
+            <div class="hub-card-body">
+              <span class="hub-card-tag">04 · Álbum Visual</span>
+              <h3 class="hub-card-title">Nuestra Tierra en Imágenes</h3>
+              <p class="hub-card-desc">
+                Recorre nuestras plantaciones en Oxapampa y los momentos que capturan el esmero y dedicación en cada cosecha.
+              </p>
+              <a href="Html/Galeria.html" class="hub-card-link">
+                Ver galería
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROCESO -->
-    <section class="proceso" id="proceso">
-      <div class="container">
-
-        <div class="proceso-header">
-          <p class="section-label reveal">05 — Proceso</p>
-          <h2 class="reveal">De la planta a la <span class="serif">taza</span>.</h2>
-          <p class="reveal">Nueve etapas que forman parte de una misma historia.</p>
-
-          <div class="proceso-progress reveal">
-            <span class="proceso-progress-bar" id="procesoProgressBar"></span>
-          </div>
-          <p class="proceso-progress-label reveal">
-            Etapa <span id="etapaActual">1</span> de 9
-          </p>
-        </div>
-
-        <!-- MOMENTO I -->
-        <div class="momento reveal" style="--bg-momento: url('img/harvest.png');">
-          <h3 class="momento-title">Momento I — En la tierra</h3>
-          <div class="etapas-grid">
-
-            <div class="etapa" data-etapa="1">
-              <span class="etapa-number">01</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 22V12"/>
-                  <path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/>
-                  <path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/>
-                </svg>
-              </div>
-              <h4>Cultivo</h4>
-              <p>Los cafetos crecen en las laderas de Villa Rica, beneficiándose del clima tropical y la riqueza del suelo.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">6-8 meses</span>
-                <span class="etapa-badge">1,200-1,800 msnm</span>
-              </div>
-              <div class="etapa-extra">
-                <p>Las variedades Caturra y Typica se adaptan al microclima de la región, produciendo granos de perfil equilibrado.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="2">
-              <span class="etapa-number">02</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3v9"/>
-                  <path d="M8 7c0-2 1.5-4 4-4s4 2 4 4"/>
-                  <path d="M6 13c0 4 3 8 6 8s6-4 6-8"/>
-                  <circle cx="12" cy="13" r="3"/>
-                </svg>
-              </div>
-              <h4>Cosecha</h4>
-              <p>Cada cereza de café es recolectada a mano, seleccionando únicamente los frutos en su punto óptimo de maduración.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Manual</span>
-                <span class="etapa-badge">Mayo - Agosto</span>
-              </div>
-              <div class="etapa-extra">
-                <p>Solo se recolectan las cerezas rojas; las verdes se dejan para la siguiente pasada, garantizando uniformidad.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="3">
-              <span class="etapa-number">03</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="7"/>
-                  <path d="M21 21l-4.3-4.3"/>
-                  <path d="M11 8v6M8 11h6"/>
-                </svg>
-              </div>
-              <h4>Selección</h4>
-              <p>Los frutos cosechados se seleccionan cuidadosamente, separando los granos de mayor calidad para el procesamiento.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Control de calidad</span>
-              </div>
-              <div class="etapa-extra">
-                <p>Se descartan cerezas dañadas o inmaduras que afectarían el sabor final del café.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- MOMENTO II -->
-        <div class="momento reveal" style="--bg-momento: url('img/drying.png');">
-          <h3 class="momento-title">Momento II — Transformación</h3>
-          <div class="etapas-grid">
-
-            <div class="etapa" data-etapa="4">
-              <span class="etapa-number">04</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2s6 6 6 11a6 6 0 11-12 0c0-5 6-11 6-11z"/>
-                </svg>
-              </div>
-              <h4>Beneficio</h4>
-              <p>El café pasa por un proceso húmedo que retira la pulpa y prepara los granos para la siguiente fase.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Proceso húmedo</span>
-                <span class="etapa-badge">12-24 h</span>
-              </div>
-              <div class="etapa-extra">
-                <p>El despulpado y fermentación controlada desarrollan las notas frutales y ácidas del café.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="5">
-              <span class="etapa-number">05</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="4"/>
-                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/>
-                </svg>
-              </div>
-              <h4>Secado</h4>
-              <p>Los granos se secan de forma controlada al sol, alcanzando el nivel de humedad ideal para preservar su calidad.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Al sol</span>
-                <span class="etapa-badge">10-14 días</span>
-              </div>
-              <div class="etapa-extra">
-                <p>El secado lento y uniforme conserva los aceites esenciales responsables del aroma.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="6">
-              <span class="etapa-number">06</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3v18"/>
-                  <path d="M5 8h14"/>
-                  <path d="M7 8l-2 8a3 3 0 006 0L9 8"/>
-                  <path d="M17 8l-2 8a3 3 0 006 0l-2-8"/>
-                </svg>
-              </div>
-              <h4>Clasificación</h4>
-              <p>Se clasifica cada grano según su tamaño, peso y calidad, asegurando uniformidad en el producto final.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Por tamaño</span>
-                <span class="etapa-badge">Por peso</span>
-              </div>
-              <div class="etapa-extra">
-                <p>Solo los granos de mayor puntaje pasan a la etapa de tostado para la marca Valle Blanco.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- DATO CURIOSO -->
-        <aside class="proceso-dato reveal">
-          <p class="proceso-dato-label">¿Sabías que...?</p>
-          <p class="proceso-dato-text">
-            El café de Villa Rica crece a más de <strong>1,600 msnm</strong>,
-            altitud que intensifica su perfil aromático y le da cuerpo a cada taza.
-          </p>
-        </aside>
-
-        <!-- MOMENTO III -->
-        <div class="momento reveal" style="--bg-momento: url('img/beans.png');">
-          <h3 class="momento-title">Momento III — Aroma final</h3>
-          <div class="etapas-grid">
-
-            <!-- TARJETA DESTACADA -->
-            <div class="etapa etapa--destacada" data-etapa="7">
-              <span class="etapa-number">07</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3s4 5 4 9a4 4 0 01-8 0c0-4 4-9 4-9z"/>
-                  <path d="M9 18h6M10 21h4"/>
-                </svg>
-              </div>
-              <h4>Tostado</h4>
-              <p>El tueste se realiza con precisión, resaltando las notas y el perfil aromático característico del café de Villa Rica.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">180-220 °C</span>
-                <span class="etapa-badge">12-18 min</span>
-                <span class="etapa-badge">Artesanal</span>
-              </div>
-              <div class="etapa-extra">
-                <p>El punto exacto de tueste define el balance entre acidez, cuerpo y dulzor. Es la etapa más artesanal del proceso.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="8">
-              <span class="etapa-number">08</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="8"/>
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M12 4v2M12 18v2M4 12h2M18 12h2"/>
-                </svg>
-              </div>
-              <h4>Molienda</h4>
-              <p>Los granos tostados se muelen según la presentación final, conservando la frescura y los aromas esenciales.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Fina / Media</span>
-              </div>
-              <div class="etapa-extra">
-                <p>El grosor de la molienda se ajusta al método de preparación: espresso, prensa francesa o filtrado.</p>
-              </div>
-            </div>
-
-            <div class="etapa" data-etapa="9">
-              <span class="etapa-number">09</span>
-              <div class="etapa-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M21 8l-9-5-9 5 9 5 9-5z"/>
-                  <path d="M3 8v8l9 5 9-5V8"/>
-                  <path d="M12 13v8"/>
-                </svg>
-              </div>
-              <h4>Empaque</h4>
-              <p>El café se empaca con cuidado, protegiendo su calidad y preparándolo para llegar al consumidor final.</p>
-              <div class="etapa-badges">
-                <span class="etapa-badge">Válvula unidireccional</span>
-              </div>
-              <div class="etapa-extra">
-                <p>El empaque con válvula permite liberar CO₂ sin dejar entrar oxígeno, conservando la frescura por más tiempo.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MISIÓN, VISIÓN, VALORES -->
-    <section class="mvv" id="mvv">
-      <div class="container">
-        <div class="mvv-grid">
-          <div class="mvv-block reveal">
-            <h3>Misión</h3>
-            <p>
-              Dar a conocer un café de origen elaborado con dedicación y respeto
-              por la tradición cafetalera de Villa Rica.
-            </p>
-          </div>
-          <div class="mvv-block reveal reveal-delay-1">
-            <h3>Visión</h3>
-            <p>
-              Fortalecer la presencia de Valle Blanco como una marca reconocida
-              por su identidad y procedencia.
-            </p>
-          </div>
-          <div
-            class="mvv-block reveal reveal-delay-2"
-            style="background-image: url(&quot;img/beans.png&quot;)"
-          >
-            <h3>Valores</h3>
-            <p>
-              Tradición, calidad, cercanía, compromiso y respeto por el origen.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERÍA -->
-    <section class="galeria" id="galeria">
-      <div class="container">
-        <div class="galeria-header">
-          <p class="section-label reveal">06 — Galería</p>
-          <h2 class="reveal">
-            Imágenes que cuentan nuestra <span class="serif">historia</span>.
-          </h2>
-        </div>
-        <div class="galeria-grid reveal">
-          <div class="galeria-item">
-            <img src="img/gallery-plantation.png" alt="Plantación Villa Rica" />
-            <div class="galeria-caption">
-              <strong>Villa Rica</strong><span>Origen</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="img/cherries.png" alt="Cerezas de café" />
-            <div class="galeria-caption">
-              <strong>Cosecha</strong><span>Proceso</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="img/beans.png" alt="Granos tostados" />
-            <div class="galeria-caption">
-              <strong>Tostado</strong><span>Aroma</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="img/drying.png" alt="Secado de café" />
-            <div class="galeria-caption">
-              <strong>Secado</strong><span>Tradición</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="img/cup.png" alt="Taza de café" />
-            <div class="galeria-caption">
-              <strong>Café</strong><span>Experiencia</span>
-            </div>
-          </div>
-          <div class="galeria-item">
-            <img src="img/harvest.png" alt="Cosecha manual" />
-            <div class="galeria-caption">
-              <strong>Recolección</strong><span>Dedicación</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contacto" id="contacto">
-      <div class="container">
-        <div class="contacto-grid">
-          <div>
-            <p class="section-label reveal" style="color: rgba(255, 255, 255, 0.5)">
-              07 — Contacto
-            </p>
-            <h2 class="contacto-title reveal">
-              ¿Quieres conocer más sobre
-              <span class="serif">Valle Blanco</span>?
-            </h2>
-            <div class="contacto-info reveal">
-              <div class="contacto-info-item">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                  <circle cx="12" cy="10" r="3" /></svg
-                >Villa Rica, Oxapampa, Perú
-              </div>
-              <div class="contacto-info-item">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
-                  /></svg
-                >+51 999 888 777
-              </div>
-              <div class="contacto-info-item">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" /></svg
-                >contacto@valleblanco.pe
-              </div>
-              <div class="contacto-info-item">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
-                  /></svg
-                >+51 999 888 777
-              </div>
-            </div>
-            <div class="contacto-social reveal">
-              <a href="#" aria-label="Instagram"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                  /></svg
-              ></a>
-              <a href="#" aria-label="Facebook"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                  /></svg
-              ></a>
-              <a href="#" aria-label="WhatsApp"
-                ><svg viewBox="0 0 24 24">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.574-1.47A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
-                  /></svg
-              ></a>
-            </div>
-          </div>
-          <form class="contacto-form reveal" id="contactForm">
-            <div class="form-group">
-              <label for="name">Nombre</label
-              ><input type="text" id="name" placeholder="Tu nombre" />
-            </div>
-            <div class="form-group">
-              <label for="email">Correo</label
-              ><input type="email" id="email" placeholder="Tu correo electrónico" />
-            </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label
-              ><textarea
-                id="message"
-                placeholder="Escríbenos tu mensaje..."
-              ></textarea>
-            </div>
-            <button type="submit" class="form-btn">Enviar mensaje</button>
-            <div class="form-success">
-              ¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.
-            </div>
-          </form>
-        </div>
+    <!-- BANNER CONTACTO -->
+    <section class="cta-banner" id="contacto-cta">
+      <div class="container cta-banner-content reveal">
+        <p class="cta-banner-label">04 — Contacto</p>
+        <h2>¿Quieres conocer más sobre <span class="serif">Valle Blanco</span>?</h2>
+        <p>
+          Estamos listos para atender tus consultas, pedidos de café de origen o coordinar atención directa con nuestra empresa familiar.
+        </p>
+        <a href="Html/Contacto.html" class="cta-banner-btn">Ir a Contacto</a>
       </div>
     </section>
 
